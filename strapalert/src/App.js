@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import ReactstrapDrop from './ReactstrapDrop';
 import ReactstrapBtngrp from './ReactstrapBtngrp';
 import ReactstrapCard from './ReactstrapCard';
+import ReactstrapCarousel from './ReactstrapCarousel';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <ReactstrapBadge/>
       <ReactstrapDrop/>
       <ReactstrapBtngrp/> */}
-      <ReactstrapCard/>
+      {/* <ReactstrapCard/> */}
+      <ReactstrapCarousel/>
     </>
   );
 }
