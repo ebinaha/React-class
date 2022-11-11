@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CDN 방식 -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>  
+
+</head>
+<body>
+    <div id="root">
+    </div>
+
+    <script type="text/babel">
+        // 1) function형 component : return을 tag 목록으로 줌
+        function Hello(){
+            return <h1>Hello World!</h1>
+        }
+        function Hello2(){
+            return <h1>Hello World2!</h1>
+        }
+        // 2) component를 tag 형태로 사용 : root에 Hello()를 넣음
+        ReactDOM.render(<div><Hello/><Hello2/></div>, document.getElementById('root'));
+    </script>
+    
+</body>
+</html>
