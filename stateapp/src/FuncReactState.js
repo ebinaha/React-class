@@ -12,7 +12,7 @@ function FuncReactState({reactString}){
 
 
     return (
-        <div>
+        <>
                 <div>
                     {/* 변수 이름만 */}
                     {/* {StateString}
@@ -28,7 +28,7 @@ function FuncReactState({reactString}){
                 {/* 객체로 선언하고 변경하기 */}
                 <button onClick={(e) => setStateCombine({...StateCombine, StateString:"Combine"})}>ReactString 변경</button>
                 <button onClick={(e) => setStateCombine({...StateCombine, StateNumber:400})}>ReactNumber 변경</button>
-            </div>
+        </>
     );
 
 }
