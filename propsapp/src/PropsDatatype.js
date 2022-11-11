@@ -2,6 +2,8 @@ import { Component } from "react";
 import datatype from 'prop-types';
 
 class PropsDatatype extends Component {
+
+    
     render(){
 
         let {String, Number, Boolean, Array, ObjectJson, Function} = this.props;
