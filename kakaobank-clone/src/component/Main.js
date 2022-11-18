@@ -2,6 +2,7 @@ import {Component} from 'react';
 import {Table} from 'reactstrap';
 import Section0 from './Section0';
 import Section1 from './Section1';
+import Section2 from './Section2';
 
 class Main extends Component {
     render(){
@@ -13,6 +14,7 @@ class Main extends Component {
                         {/* 0번째 행 : tRow 0 */}
                             <Section0/>
                             <Section1/>
+                            <Section2/>
 
                         
                     </tbody>
