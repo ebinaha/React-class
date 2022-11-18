@@ -131,9 +131,25 @@ table {
   align-items: center;
   background-color: rgb(29, 115, 177);
   color: whitesmoke;
-
 }
 
 .Hover:hover{
   background-color: rgb(6, 6, 80);
+}
+
+/* Section7.css */
+.carousel {
+  width: 280px;
+  height: 441px;
+  /* 가운데 정렬 */
+  margin: 0 auto;
+}
+
+.componentBox2 {
+  padding-top: 50px;
+  padding-bottom: 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color:black;
 }
