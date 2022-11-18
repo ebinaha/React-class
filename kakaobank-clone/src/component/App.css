@@ -120,3 +120,20 @@ table {
   font-size: small;
   color: darkgray;
 }
+
+
+/* Section6.css */
+.componentBox {
+  padding-top: 50px;
+  padding-bottom: 0px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(29, 115, 177);
+  color: whitesmoke;
+
+}
+
+.Hover:hover{
+  background-color: rgb(6, 6, 80);
+}
