@@ -6,7 +6,7 @@ class Section4 extends Component {
         return(
             <tr>
                 <td className={"w-50"}>
-                    <div className="textBox" style={{paddingLeft:'130px'}}>
+                    <div className="textBox" style={{paddingLeft:'200px'}}>
                         <span className='L-text'>
                             함께 도전해서 <br/>
                             재미있는 26주적금 <br/>

@@ -10,7 +10,7 @@ class Section2 extends Component {
                 {/* style에 design을 입히기 위해서 className 사용 */}
                 {/* column 비율 : 7:3 */}
                 <td className={"w-70"}>
-                    <div className="textBox">
+                    <div className="textBox"  style={{paddingLeft:'200px'}}>
                         <span className='L-text'>
                             우대조건 없이 <br/>
                             합리적인 예금과 적금 <br/>
