@@ -41,6 +41,7 @@
 }
 
 
+/* Section0.css */
 table {
   width: 1440px;
 }
@@ -87,4 +88,35 @@ table {
   color: black;
   opacity: .7;
   text-align: left;
+}
+
+
+/* Section1.css */
+.imgBox {
+  margin:0 auto;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.textBox {
+  height: 750px;
+  padding-top: 150px;
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 50px;
+  padding-right: 20px;
+}
+
+.L-text {
+  display: block;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.S-text {
+  display: block;
+  padding-top: 30px;
+  font-size: small;
+  color: darkgray;
 }

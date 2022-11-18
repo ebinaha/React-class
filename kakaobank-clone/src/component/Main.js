@@ -1,6 +1,7 @@
 import {Component} from 'react';
 import {Table} from 'reactstrap';
 import Section0 from './Section0';
+import Section1 from './Section1';
 
 class Main extends Component {
     render(){
@@ -11,6 +12,8 @@ class Main extends Component {
                         {/* tr : 각각의 컴포넌트가 행으로 취급*/}
                         {/* 0번째 행 : tRow 0 */}
                             <Section0/>
+                            <Section1/>
+
                         
                     </tbody>
                 </Table>
