@@ -54,8 +54,8 @@ class MakeAccount extends Component {
     submit = (e) => {
         console.log(JSON.stringify(this.state.acc));
         // 매개변수 URL, data(acc는 이름)
-        axios.post('http://localhost:8080/makeaccount',
-            {acc:JSON.stringify(this.state.acc)}
+        axios.post('http://localhost:8090/makeaccount',null,
+            {params:this.state.acc}
         ).then((response)=>{
             // 정상적으로 가져왔을 경우 : 계좌개설 에러 여부를 헤더와 바디로 가져옴
             this.setState({msg_header:'계좌개설', msg_body:'계좌가 개설되었습니다.'});
