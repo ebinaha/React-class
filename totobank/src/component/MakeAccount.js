@@ -67,6 +67,22 @@ class MakeAccount extends Component {
         }) 
     }
 
+    checkId = (e) => {
+        axios.post('http://localhost:8090/doubleid', null, {params:{id:this.state.acc.id}}
+        ).then((response)=> {
+            let msg = '';
+            console.log(response.data);
+            if(response.data === true){
+                msg = '사용중인 계좌번호입니다.';
+            } else {  msg = '사용 가능한 계좌번호입니다.'; }
+            this.setState({msg_header:'계좌 중복확인', msg_body:msg});
+            this.toggle();
+        }).catch((err)=>{
+            this.setState({msg_header:'오류', msg_body:'계좌 중복 확인을 실패했습니다.'});
+            this.toggle();
+        })
+    }
+
     render () {
         return(
             <div style={this.divStyle}>
@@ -79,7 +95,7 @@ class MakeAccount extends Component {
                         </Col>
                         
                         <Col sm={3}>
-                            <Button color='primary' style={{width:'100%'}}> 중복 </Button>
+                            <Button color='primary' style={{width:'100%'}} onClick={this.checkId}> 중복 </Button>
                         </Col>
                     </FormGroup>
 
