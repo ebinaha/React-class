@@ -19,7 +19,7 @@ class Header extends Component {
                         <Link to={'/withdraw'}>출금</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={'/transfor'}>계좌이체</Link>
+                        <Link to={'/transfer'}>계좌이체</Link>
                     </li>
                     <li className="nav-item">
                         <Link to={'/accountinfo'}>계좌조회</Link>

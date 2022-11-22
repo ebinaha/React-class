@@ -2,12 +2,13 @@ import {Component} from 'react';
 import {Form, Label, Input, Button, FormGroup,Col,Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
 import axios from 'axios';
 
-class Deposit extends Component{
+class Transfer extends Component{
+
     constructor (props){
         super(props);
         this.divStyle = {
-            width:'480px',
-            height:'240px',
+            width:'500px',
+            height:'280px',
             textAlign : 'left',
             margin : '100px auto',
             border : '2px solid gray',
@@ -15,19 +16,18 @@ class Deposit extends Component{
             borderRadius : '20px'
         };
         this.state = {
-            //초기화
             acc : {
-                id:'',
-                money:'',
+                id_s:'',
+                id_r:'',
+                money:''
             },
             modal : false,
-            //받아서 쓸 변수 초기화
             msg_header:'',
             msg_body:''
-        };
+        }
+
     }
 
-    
     toggle = () => {
         this.setState({modal:!this.state.modal});
     }
@@ -40,15 +40,15 @@ class Deposit extends Component{
     }
 
     submit = (e) => {
-        axios.post('http://localhost:8090/deposit', null, 
+        axios.post('http://localhost:8090/transfer', null, 
             {params:this.state.acc}) // 객체에서 만들어야 해서 중괄호 사용 {}
         .then((response)=> {
             console.log(response);
-            this.setState({msg_header:'입금', msg_body: `잔액 : ${response.data}원`});
+            this.setState({msg_header:'이체 성공', msg_body: `이체 후 잔액 : ${response.data}원`});
             this.toggle();
         }).catch((err)=>{
             console.log(err);
-            this.setState({msg_header:'오류', msg_body:'입금에 실패했습니다.'});
+            this.setState({msg_header:'오류', msg_body:'이체에 실패했습니다.'});
             this.toggle();
         })
     }
@@ -58,26 +58,35 @@ class Deposit extends Component{
             <div style={this.divStyle}>
                 <Form>
                     <FormGroup row>
-                        {/* sm(비율) = label 4 : input 6 : button 2 => 전체 12*/}
-                        <Label for='id' sm={4}> 계 좌 &nbsp; 번 호 </Label>
+                        <Label for='id_s' sm={4}> 보내는 계좌번호 </Label>
                         <Col sm={8}>
-                            <Input type='text' name="id" id="id" value={this.state.acc.id} onChange={this.changeInput}/>
+                            <Input type='text' name="id_s" id="id_s" value={this.state.acc.id_s} onChange={this.changeInput}/>
                         </Col>
                     </FormGroup>
 
                     <FormGroup row>
-                        <Label for='name' sm={4}> 입 &nbsp; &nbsp; 금 &nbsp; &nbsp; 액 </Label>
+                    <Label for='id_r' sm={4}> 받 &nbsp; 는 계좌번호 </Label>
+                        <Col sm={8}>
+                            <Input type='text' name="id_r" id="id_r" value={this.state.acc.id_r} onChange={this.changeInput}/>
+                        </Col>
+                    </FormGroup>
+
+                    <FormGroup row>
+                    <Label for='money' sm={4}>  이 &nbsp; 체 &nbsp; 금 &nbsp; 액 </Label>
                         <Col sm={8}>
                             <Input type='number' name="money" id="money" value={this.state.acc.money} onChange={this.changeInput}/>
                         </Col>
                     </FormGroup>
 
-
                     <FormGroup row>
                         <Col sm={12}>
-                            <Button color='primary' style={{width:'100%'}} onClick={this.submit}> 입 &nbsp; &nbsp; &nbsp; &nbsp; 금 </Button>
+                            <Button color='primary' style={{width:'100%'}} onClick={this.submit}> 이 &nbsp; &nbsp; 체 </Button>
                         </Col>
                     </FormGroup>
+
+                    {/* 특수계좌 선택시에만 option 선택하는 변수 연결 : special(false) - disabled, change함수로 상태 변경*/}
+
+
                 </Form>
 
                 <Modal isOpen={this.state.modal} fade={true} toggle={this.toggle}>
@@ -88,20 +97,11 @@ class Deposit extends Component{
                     <ModalFooter color='secondary' onClick={this.toggle}>
                         <Button color='secondary' onClick={this.toggle}> 닫기 </Button>
                     </ModalFooter>
-
                 </Modal>
             </div>
         )
-    }
-    
-
+    }    
 }
 
-export default Deposit;
 
-
-// 480 240
-// 마진 100
-// 계좌번호 출금액 출금
-
-// 계좌번호 입금액 입금 버튼 100%
+export default Transfer;

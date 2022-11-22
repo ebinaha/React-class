@@ -68,7 +68,7 @@ class Withdraw extends Component{
                     <FormGroup row>
                         <Label for='name' sm={4}> 출 &nbsp; &nbsp; 금 &nbsp; &nbsp; 액 </Label>
                         <Col sm={8}>
-                            <Input type='number' name="money" id="money" value={this.state.acc.balance} onChange={this.changeInput}/>
+                            <Input type='number' name="money" id="money" value={this.state.acc.money} onChange={this.changeInput}/>
                         </Col>
                     </FormGroup>
 

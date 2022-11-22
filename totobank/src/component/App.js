@@ -7,6 +7,7 @@ import MakeAccount from './MakeAccount';
 import AccountInfo from './AccountInfo';
 import Deposit from './Deposit';
 import Withdraw from './Withdraw';
+import Transfer from './Transfer';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/accountinfo' element={<AccountInfo/>}/>
         <Route exact path='/deposit' element={<Deposit/>}/>
         <Route exact path='/withdraw' element={<Withdraw/>}/>
+        <Route exact path='/transfer' element={<Transfer/>}/>
       </Routes>
     </div>
   );
