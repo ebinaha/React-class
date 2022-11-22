@@ -5,6 +5,9 @@ import Header from './Header';
 import Main from './Main';
 import MakeAccount from './MakeAccount';
 import AccountInfo from './AccountInfo';
+import Deposit from './Deposit';
+import Withdraw from './Withdraw';
+
 
 function App() {
   return (
@@ -14,6 +17,8 @@ function App() {
         <Route exact path='/' element={<Main/>}/>
         <Route exact path='/makeaccount' element={<MakeAccount/>}/>
         <Route exact path='/accountinfo' element={<AccountInfo/>}/>
+        <Route exact path='/deposit' element={<Deposit/>}/>
+        <Route exact path='/withdraw' element={<Withdraw/>}/>
       </Routes>
     </div>
   );

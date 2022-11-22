@@ -2,7 +2,7 @@ import {Component} from 'react';
 import {Form, Label, Input, Button, FormGroup,Col,Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap'
 import axios from 'axios';
 
-class Deposit extends Component{
+class Withdraw extends Component{
     constructor (props){
         super(props);
         this.divStyle = {
@@ -40,15 +40,15 @@ class Deposit extends Component{
     }
 
     submit = (e) => {
-        axios.post('http://localhost:8090/deposit', null, 
+        axios.post('http://localhost:8090/withdraw', null, 
             {params:this.state.acc}) // 객체에서 만들어야 해서 중괄호 사용 {}
         .then((response)=> {
             console.log(response);
-            this.setState({msg_header:'입금', msg_body: `잔액 : ${response.data}원`});
+            this.setState({msg_header:'출금', msg_body: `잔액 : ${response.data}원`});
             this.toggle();
         }).catch((err)=>{
             console.log(err);
-            this.setState({msg_header:'오류', msg_body:'입금에 실패했습니다.'});
+            this.setState({msg_header:'오류', msg_body:'출금에 실패했습니다.'});
             this.toggle();
         })
     }
@@ -66,7 +66,7 @@ class Deposit extends Component{
                     </FormGroup>
 
                     <FormGroup row>
-                        <Label for='name' sm={4}> 입 &nbsp; &nbsp; 금 &nbsp; &nbsp; 액 </Label>
+                        <Label for='name' sm={4}> 출 &nbsp; &nbsp; 금 &nbsp; &nbsp; 액 </Label>
                         <Col sm={8}>
                             <Input type='number' name="money" id="money" value={this.state.acc.balance} onChange={this.changeInput}/>
                         </Col>
@@ -75,7 +75,7 @@ class Deposit extends Component{
 
                     <FormGroup row>
                         <Col sm={12}>
-                            <Button color='primary' style={{width:'100%'}} onClick={this.submit}> 입 &nbsp; &nbsp; &nbsp; &nbsp; 금 </Button>
+                            <Button color='primary' style={{width:'100%'}} onClick={this.submit}> 출 &nbsp; &nbsp; &nbsp; &nbsp; 금 </Button>
                         </Col>
                     </FormGroup>
                 </Form>
@@ -97,11 +97,4 @@ class Deposit extends Component{
 
 }
 
-export default Deposit;
-
-
-// 480 240
-// 마진 100
-// 계좌번호 출금액 출금
-
-// 계좌번호 입금액 입금 버튼 100%
+export default Withdraw;
