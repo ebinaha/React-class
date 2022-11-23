@@ -27,6 +27,7 @@ class WriteBoard extends Component {
         e.preventDefault();
         // JS제공 객체 : FormData
         const formData = new FormData();
+        // key , value 형태
         formData.append('writer', this.state.writer);
         formData.append('password', this.state.password);
         formData.append('subject', this.state.subject);
@@ -39,7 +40,7 @@ class WriteBoard extends Component {
         //     }
         // }
 
-        axios.post('http://localhost:8090/writeboard', formData)
+        axios.post('http://localhost:8090/writeboard2', formData)
         .then((response) => {
             alert(response.data);
 
@@ -112,7 +113,7 @@ class WriteBoard extends Component {
                             </td>
                             <td className='td_right'>
                                 {/* file은 value대신 함수로 변수 연동 */}
-                                <input type='file' name='file' id='file' onChange={this.fileChange}/>
+                                <input type='file' name='file' id='file' onChange={this.fileChange} accept='image/*'/>
                             </td>
                         </tr>
                     </table>
