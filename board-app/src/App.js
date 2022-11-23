@@ -1,10 +1,12 @@
 import './App.css';
 import WriteBoard from './component/WriteBoard';
+import DetailBoard from './component/DetailBoard';
 
 function App() {
   return (
     <div>
-        <WriteBoard/>
+        {/* <WriteBoard/> */}
+        <DetailBoard/>
     </div>
   );
 }
