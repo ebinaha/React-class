@@ -72,7 +72,7 @@ class DetailBoard extends Component {
                                 </label>
                             </td>
                             <td className='td_right'>
-                                <img src={this.state.imageUrl} alt=''/> 
+                                <img src={this.state.imageUrl} alt='' width="300px"/> 
                             </td>
                         </tr>
                     </table>
