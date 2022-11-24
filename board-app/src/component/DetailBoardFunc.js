@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react';
+import {useParams} from 'react-router-dom';
 import './WriteBoard.css';
 import axios from 'axios';
 
@@ -8,14 +9,21 @@ function DetailBoardFunc() {
     const [subject, setSubject] = useState('');
     const [content, setContent] = useState('');
     const [imgUrl, setImgUrl] = useState('');
+    // class component에서 사용할 수 없음 
+    // 객체일 때 전개하는 방법 : 객체로 가져옴 {}
+    // Route path :id  => 명칭이 반드시 일치해야함
+    const {id} = useParams();
+    
 
     useEffect(()=>{
-        axios.get('http://localhost:8090/boarddetail/7')
+        // `` 으로 링크 가져오기 
+        axios.get(`http://localhost:8090/boarddetail/${id}`)
         .then((response)=>{
-            setWriter(response.data.writer);
-            setSubject(response.data.subject);
-            setContent(response.data.content);
-            setImgUrl('http://localhost:8090/img/'+response.data.filename);
+            const board = response.data;
+            setWriter(board.writer);
+            setSubject(board.subject);
+            setContent(board.content);
+            setImgUrl('http://localhost:8090/img/'+board.filename);
         }).catch((err)=>{
             console.log(err);
         })

@@ -13,7 +13,7 @@ function App() {
         <Route exact path='/' element={ <ListBoard/>}/>
         <Route exact path='/write' element={<WriteBoard/>}/>
         <Route exact path='/detail' element={<DetailBoard/>}/>
-        <Route exact path='/detail2' element={<DetailBoardFunc/>}/>
+        <Route exact path='/detail2/:id' element={<DetailBoardFunc/>}/>
       </Routes>
     </div>
   );

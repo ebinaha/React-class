@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react';
 import axios from 'axios';
+import './ListBoard.css'
+import {Link} from 'react-router-dom'
 
 
 function ListBoard(){
@@ -19,10 +21,10 @@ function ListBoard(){
     return(
         <>        
             <h2> 
-                글 목록 <a href="#"> 게시판 글쓰기 </a> 
+                글 목록 <Link to={'/write'}> 게시판 글쓰기 </Link>  
             </h2>
             <section>
-                <table>
+                <table className='table_list'>
                     <tbody>
                         <tr id='tr_top'>
                             <th> 번호 </th>

@@ -43,7 +43,8 @@ class WriteBoard extends Component {
         axios.post('http://localhost:8090/writeboard2', formData)
         .then((response) => {
             alert(response.data);
-
+            // 등록시 목록 화면으로 이동
+            document.location.href = '/';
         }).catch((err) => {
 
         })
