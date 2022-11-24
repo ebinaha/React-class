@@ -58,7 +58,7 @@ class WriteBoard extends Component {
     render(){
         return(
             <section>
-                <h2> 게시판 </h2>
+                <h2> 게시글 작성 </h2>
                 <form>
                     <table>
                         <tr>
