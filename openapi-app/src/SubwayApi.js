@@ -3,6 +3,8 @@ import axios from 'axios';
 import {Button, Table} from 'reactstrap';
 import SubwaySheet from './SubwaySheet';
 import SubwayLineChart from './SubwayLineChart';
+import SubwayAreaChart from './SubwayAreaChart';
+
 
 function SubwayApi(){
     const [viewChart, setViewChart] = useState(false);
@@ -29,11 +31,13 @@ function SubwayApi(){
             <Button color="success" outline onClick={apiRequest}> 데이터 가져오기 </Button>
             <br/><br/>
             
-            {/* viewchart : 빈 차트는 보이지 않고 true일 때만 차트 보이도록 함 */}
+            {/* viewchart : 빈 차트는 보이지 않고 true일 때(데이터를 가져왔을 때)만 차트 보이도록 함 */}
             {viewChart && (
                 <>
                     <SubwaySheet row={row}/><br/>
                     <SubwayLineChart row={row}/>
+                    <SubwayAreaChart row={row}/>
+                    {/* <SubwayAreaChart2 row={row}/> */}
                 </>
             )}
             
