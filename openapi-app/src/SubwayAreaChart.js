@@ -19,7 +19,7 @@ function SubwayAreaChart({row}){
     return(
         <>
             {/* 객체 AreaChart에 props를 넣어줌 : 컴포넌트의 매개변수(props)로 넣어주는 것*/}
-            <AreaChart width={1300} height={500} data={data} margin={{top:5, right:30, left:20, bottom:5}}>
+            <AreaChart width={1300} height={500} data={data} margin={{top:5, right:30, left:20, bottom:5}} style={{margin:"0 auto"}}>
                 {/* 표의 그리드 : 시작과 끝 사이에 3개씩 그림 */}
                 <CartesianGrid strokeDasharray="3 3"/>
                 {/* // 승차인원 하차인원수 / x축은 00, 역이름 */}
