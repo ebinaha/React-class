@@ -7,7 +7,7 @@ import RechartsLine from './RechartsLine';
 function App() {
   return (
     <div className="App">
-      <RechartsLine/>
+      {/* <RechartsLine/> */}
       <SubwayApi/>
       
     </div>
