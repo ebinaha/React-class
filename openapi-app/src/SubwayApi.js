@@ -4,6 +4,7 @@ import {Button, Table} from 'reactstrap';
 import SubwaySheet from './SubwaySheet';
 import SubwayLineChart from './SubwayLineChart';
 import SubwayAreaChart from './SubwayAreaChart';
+import SubwayBarChart from './SubwayBarChart';
 
 
 function SubwayApi(){
@@ -11,7 +12,7 @@ function SubwayApi(){
     const [row, setRow] = useState([]);
 
     const apiRequest = () => {
-        axios.get("http://openapi.seoul.go.kr:8088/79415655796265613130364b44784474/json/CardSubwayStatsNew/1/50/20221019")
+        axios.get("http://openapi.seoul.go.kr:8088/79415655796265613130364b44784474/json/CardSubwayStatsNew/1/20/20221019")
         .then((response) => {
             console.log(response.data)
             // 사용할 배열만 가져오기
@@ -38,6 +39,7 @@ function SubwayApi(){
                     <SubwayLineChart row={row}/>
                     <SubwayAreaChart row={row}/>
                     {/* <SubwayAreaChart2 row={row}/> */}
+                    <SubwayBarChart row={row}/>
                 </>
             )}
             
