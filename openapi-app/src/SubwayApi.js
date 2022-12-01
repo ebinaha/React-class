@@ -5,6 +5,7 @@ import SubwaySheet from './SubwaySheet';
 import SubwayLineChart from './SubwayLineChart';
 import SubwayAreaChart from './SubwayAreaChart';
 import SubwayBarChart from './SubwayBarChart';
+import SubwayComposedChart from './SubwayComposedChart';
 
 
 function SubwayApi(){
@@ -40,6 +41,7 @@ function SubwayApi(){
                     <SubwayAreaChart row={row}/>
                     {/* <SubwayAreaChart2 row={row}/> */}
                     <SubwayBarChart row={row}/>
+                    <SubwayComposedChart row={row}/>
                 </>
             )}
             
