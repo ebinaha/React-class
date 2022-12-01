@@ -5,17 +5,19 @@ import SubwaySheet from './SubwaySheet';
 import SubwayLineChart from './SubwayLineChart';
 
 function SubwayApi(){
-
+    const [viewChart, setViewChart] = useState(false);
     const [row, setRow] = useState([]);
 
     const apiRequest = () => {
-        axios.get("http://openapi.seoul.go.kr:8088/79415655796265613130364b44784474/json/CardSubwayStatsNew/1/100/20221019")
+        axios.get("http://openapi.seoul.go.kr:8088/79415655796265613130364b44784474/json/CardSubwayStatsNew/1/50/20221019")
         .then((response) => {
             console.log(response.data)
             // 사용할 배열만 가져오기
             console.log(response.data.CardSubwayStatsNew.row)
 
             setRow(response.data.CardSubwayStatsNew.row);
+            setViewChart(true);
+
         }).catch((err)=>{
             console.log(err)
         })
@@ -26,8 +28,15 @@ function SubwayApi(){
             <br/>
             <Button color="success" outline onClick={apiRequest}> 데이터 가져오기 </Button>
             <br/><br/>
-            <SubwaySheet row={row}/>
-            <SubwayLineChart row={row}/>
+            
+            {/* viewchart : 빈 차트는 보이지 않고 true일 때만 차트 보이도록 함 */}
+            {viewChart && (
+                <>
+                    <SubwaySheet row={row}/><br/>
+                    <SubwayLineChart row={row}/>
+                </>
+            )}
+            
         </div>
         
     )
