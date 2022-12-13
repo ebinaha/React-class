@@ -7,7 +7,7 @@ export const reqToken = async (token, dispatch, cookie, setCookie) => {
         // interceptor 까지만 가는 url : 아무거나 지정 가능
         const res = await axios.post('http://localhost:8080/loginCheck', null,
             {
-                headers : {Authorization : cookie.refreshToken}
+                headers : {Authorization : token+","+cookie.refreshToken}
             });
     } catch (err){
         if(err.request.status == 401){

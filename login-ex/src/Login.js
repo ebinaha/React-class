@@ -27,6 +27,8 @@ function Login(){
             // userid : redux에 저장
             dispatch({type:"USERID", data:response.data.userid});
 
+            console.log(response.data);
+
             // refreshToken : cookie에 저장
             // 쿠키 만료 기간 설정 : getDate의 단위에 따라 변화 => +1 (day)
             const expires = new Date();
