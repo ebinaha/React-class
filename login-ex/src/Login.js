@@ -7,7 +7,7 @@ import axios from 'axios';
 function Login(){
     // 참조변수
     const formRef = useRef();
-
+    // refreshToken 없어도 됨
     const [cookie, setCookie] = useCookies(['refreshToken']);
     const dispatch = useDispatch();
 
@@ -31,6 +31,7 @@ function Login(){
             // 쿠키 만료 기간 설정 : getDate의 단위에 따라 변화 => +1 (day)
             const expires = new Date();
             expires.setDate(expires.getDate()+1);
+            // refreshToken 개발자가 지정
             setCookie('refreshToken', response.data.refreshToken, {
                 url:'/', expires
             })
