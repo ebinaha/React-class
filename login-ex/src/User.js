@@ -24,7 +24,7 @@ function User(){
         try{
             const res = await axios.post('http://localhost:8080/userInfo', null, 
                 {
-                    headers : token,
+                    headers : {Authorization: token},
                     params:{id:userid}
                 })
             // 응답을 여기에 써도 됨 : res 데이터를 가져온 상태, login에서 then까지
