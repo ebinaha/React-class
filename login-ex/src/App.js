@@ -4,6 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
+import Header from './Header';
 
 // 컴포넌트 분리 가능
 function reducer(currentState, action){
