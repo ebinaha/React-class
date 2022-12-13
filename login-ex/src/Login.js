@@ -14,7 +14,7 @@ function Login(){
     const login = (e) => {
         e.preventDefault();
         // proxy에 넣어서 사용할 것
-        axios.post('http://localhost:8090/login', null,
+        axios.post('http://localhost:8080/login', null,
             { params : {
                 id:formRef.current.id.value,
                 password:formRef.current.password.value

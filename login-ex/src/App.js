@@ -6,6 +6,7 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import Header from './Header';
 import Login from './Login';
+import User from './User';
 
 // 컴포넌트 분리 가능
 function reducer(currentState, action){
