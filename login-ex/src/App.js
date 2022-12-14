@@ -8,23 +8,6 @@ import Header from './Header';
 import Login from './Login';
 import User from './User';
 
-// 컴포넌트 분리 가능
-function reducer(currentState, action){
-  if(currentState == undefined){
-    return({
-      // 토큰
-      Authorization:'',
-      UserId:''
-    })
-  }
-  const newState = {...currentState};
-  switch(action.type) {
-    case "NEWTOKEN" : newState.Authorization = action.data;
-    break;
-    case "USERID" : newState.UserId = action.data;
-  }
-  return newState;
-}
 
 const store = createStore(reducer);
 
