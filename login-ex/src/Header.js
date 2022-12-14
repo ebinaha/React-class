@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 
 function Header(){
     // redux에서 값을 가져올 때 쓰는 훅
@@ -7,8 +7,14 @@ function Header(){
     const token = useSelector(state=>state.Authorization);
     const userid = useSelector(state=>state.UserId);
 
+    const dispatch = useDispatch();
+    
     // 로그아웃시 다시 로그인 페이지 노출
     const logout = () => {
+        // redux clear 작업
+        dispatch({type:"NEWTOKEN", data:''});
+        dispatch({type:"USERID", data:''});
+
         document.location.href='/';
     }
 

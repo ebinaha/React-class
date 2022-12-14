@@ -9,7 +9,7 @@ const persistConfig = {
     storage,
 };
 
-function reducer(currentState, action){
+function myreducer(currentState, action){
     if(currentState == undefined){
       return({
         // 토큰
@@ -26,10 +26,12 @@ function reducer(currentState, action){
     return newState;
   }
 
-  const persistReducer = persistReducer(persistConfig, reducer);
+  // reducer : 내가 만든 리듀서
+  const persistedReducer = persistReducer(persistConfig, myreducer);
 
   const store = configureStore({
-    reducer:persistReducer,
+    // reducer : 약속된 이름 
+    reducer:persistedReducer,
   })
 
   export default store;
