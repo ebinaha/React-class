@@ -3,6 +3,8 @@ import axios from 'axios';
 // 컴포넌트가 아닌 함수(function)
 // hook은 컴포넌트에서만 사용 가능, 컴포넌트에서 생성 후 가져와야 함 : 함수에서 생성할 수 없음 (useDispatch, setCookie 등)
 export const reqToken = async (token, dispatch, cookie, setCookie) => {
+    
+    console.log(token+","+cookie.refreshToken);
     try {
         // interceptor 까지만 가는 url : 아무거나 지정 가능
         const res = await axios.post('http://localhost:8080/loginCheck', null,

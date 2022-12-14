@@ -23,9 +23,18 @@ function Header(){
                 {/* 로그인 된 상태에서만 보여주는 페이지 : 마이페이지 */}
                 {userid != '' && (
                     <li className="nav-item">
-                        <Link to={'/user'}> 회원조회 </Link>                    
+                        <Link to={'/user'}> 회원조회 </Link>  
+                        <Link to={'/'}> 홈 </Link>                   
                     </li>
                 )}
+                
+                {/* 마이페이지 버튼 적용 */}
+                {/* {userid = '' && (
+                    <li className="nav-item">
+                        <Link to={'/user'}> 회원조회 </Link>  
+                        <Link to={'/'}> 홈 </Link>                   
+                    </li>
+                )} */}
             </ul>
         </div>
     )

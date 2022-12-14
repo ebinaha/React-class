@@ -34,6 +34,7 @@ function User(){
             // 에러 발생시 
             if(err.request.status == 401) {
                 const rescode = err.response.data.rescode;
+
                 // 100 : accesstoken 유효하지 않음 => 쿠키에 있는 refreshtoken 보냄
                 if(rescode == 100) {
                     reqToken(token, dispatch, cookie, setCookie);
